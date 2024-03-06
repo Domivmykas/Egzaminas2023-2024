@@ -1,0 +1,66 @@
+.dropdown {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0%;
+    width: 50%;
+    height: 100%;
+    background-color: #333;
+    overflow: auto; /* Enable scrolling if needed */
+    z-index: 999; /* Ensure the dropdown appears on top of other elements */
+    animation: slide-in 0.5s forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 200px; /* Set a maximum height for the dropdown */
+    overflow: auto; /* Enable scrolling */
+    animation: slide-in 0.5s ease-in;
+  }
+
+  .dropdown a {
+    text-decoration: none;
+    transition: background-color 0.3s;
+    padding: 10px 20px;
+    transition: transform 0.5s;
+    border-bottom: 1px solid #555;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin-bottom: 2px; /* Add 2px margin between the links */
+  }
+
+  .dropdown a:hover {
+    background-color: #555;
+  }
+
+  .button {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #f44336;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+  }
+
+  .button:hover + .dropdown {
+    display: block;
+    animation: slide-in 0.5s forwards;
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
